@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div id="block1">
+                <button class="area" id="area"><i class="fas fa-code"></i></button>
+         
+            <div class="parametrs">
+                <button id="bold"><i class="fas fa-bold"></i></button>
+                <button id="italic"><i class="fas fa-italic"></i></button>
+                <button id="underline"><i class="fas fa-underline"></i></button>
+                <button id="line"><i class="fas fa-strikethrough"></i></button>
+
+            </div>
+            <div class="position">
+                <button id="left"><i class="fas fa-align-left"></i></button>
+                <button id="center"><i class="fas fa-align-justify"></i></button>
+                <button id="right"><i class="fas fa-align-right"></i></button>
+            </div>
+            <div class="options-box">
+
+                <!-- Шрифт -->
+                <div class="dropdown">
+                    <button style="outline: none; border:none"  class=" dropdown-toggle butt2" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-font"></i>
+                    </button>
+                    <div onclick="myFamily(event) " class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a style="font-family:Arial " class="dropdown-item" href="#">Arial</a>
+                        <a style="font-family: Georgia" class="dropdown-item" href="#">Georgia</a>
+                        <a style="font-family:Impact " class="dropdown-item" href="#">Impact</a>
+                        <a style="font-family:Tahoma " class="dropdown-item" href="#">Tahoma</a>
+                        <a style="font-family:Times New Roman " class="dropdown-item" href="#">Times New Roman</a>
+                        <a style="font-family:Verdana " class="dropdown-item" href="#">Verdana</a>
+                    </div>
+                </div>
+
+                <!-- Розмір -->
+                <div class="dropdown">
+                    <button style="outline: none; border:none" class=" dropdown-toggle" type="button"
+                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+
+                    <div  onclick="mySize(event)" class="dropdown-menu size" id="drmenu" aria-labelledby="dropdownMenuButton">
+                        <a style="font-size: 12px" class="dropdown-item" href="#">12px</a>
+                        <a style="font-size: 14px" class="dropdown-item" href="#">14px</a>
+                        <a style="font-size: 16px" class="dropdown-item" href="#">16px</a>
+                        <a style="font-size: 18px" class="dropdown-item" href="#">18px</a>
+                        <a style="font-size: 20px" class="dropdown-item" href="#">20px</a>
+                        <a style="font-size: 22px" class="dropdown-item" href="#">22px</a>
+                        <a style="font-size: 25px" class="dropdown-item" href="#">25px</a>
+                        <a style="font-size: 30px" class="dropdown-item" href="#">30px</a>
+                    </div>
+                </div>
+                <button id="colors" data-toggle="modal" data-target="#modalColor"><i
+                        class="fas fa-palette"></i></button>
+
+                <button id="images" data-toggle="modal" data-target="#imageModal"><i class="fas fa-image"></i></button>
+
+            </div>
+            <button type="button" id="login" data-toggle="modal" data-target="#modalLogin"><i class="fas fa-lock"></i></button>
+            <!-- Логін -->
+            <div class="modal fade" data-backdrop="static" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form name="log10">
+                                <div class="form-group">
+                                    <input type="text" name="in1" class="form-control imp1" id="recipient-name"
+                                        placeholder="Login here...">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="in2" class="form-control imp2" id="recipient-name"
+                                        placeholder="Password here...">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="butt">Sign
+                                In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gen1">
+        <div id="block2">
+            <div class="boxx">
+                <button id="save"><i class="fas fa-save"></i></button>
+                <button id="table" data-toggle="modal" data-target="#modalTable"><i class="fas fa-table"></i></button>
+                <button id="li-ol" data-toggle="modal" data-target="#modalLi-Ol"><i class="fas fa-list-ol"></i></button>
+                <button id="li-ul" data-toggle="modal" data-target="#modalLi-Ul"><i class="fas fa-list-ul"></i></button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="cont1" class="conteiner1">
+        <!-- Фото -->
+        <div class="modal fade" data-backdrop="static" id="imageModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pick up color for background</h5>
+                        <button type="button" id="firstClose" class="close" data-dismiss="modal" aria-label="Close"
+                            id="modalsCloseSeconds">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                role="tab" aria-controls="nav-home" aria-selected="true">Color</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">Image</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                                role="tab" aria-controls="nav-contact" aria-selected="false">Image upload</a>
+                        </div>
+                    </nav>
+                    <div class="modal-body" id="styleModals">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <div class="colors1">
+                                    <div class="col1">
+                                        <div style="background-color: red; color: red" class="box1 num2"></div>
+                                        <div style="background-color: blue; color: blue" class="box2 num2"></div>
+                                        <div style="background-color: coral; color: coral" class="box3 num2"></div>
+                                        <div style="background-color: green; color: green" class="box4 num2"></div>
+                                        <div style="background-color: yellow; color: yellow" class="box5 num2"></div>
+                                        <div style="background-color: orange; color: orange" class="box6 num2"></div>
+                                    </div>
+                                    <div class="col2">
+                                        <div style="background-color: palevioletred; color: palevioletred"
+                                            class="box7 num2"></div>
+                                        <div style="background-color: skyblue; color: skyblue" class="box8 num2"></div>
+                                        <div style="background-color: teal; color: teal" class="box9 num2"></div>
+                                        <div style="background-color: chartreuse; color: chartreuse" class="box10 num2">
+                                        </div>
+                                        <div style="background-color: gray; color: gray" class="box11 num2"></div>
+                                        <div style="background-color: black; color: black" class="box12 num2"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">
+                                <div class="images">
+                                    <div style="background-image: url(images/1.jpg);background-size: 100% 100%;"
+                                        class="box  image1"></div>
+                                    <div style="background-image: url(images/2.jpg);background-size: 100% 100%;"
+                                        class="box  image2"></div>
+                                    <div style="background-image: url(images/3.jpg);background-size: 100% 100%;"
+                                        class="box  image3"></div>
+                                    <div style="background-image: url(images/4.jpg);background-size: 100% 100%;"
+                                        class="box  image4"></div>
+                                    <div style="background-image: url(images/5.jpg);background-size: 100% 100%;"
+                                        class="box  image5"></div>
+                                    <div style="background-image: url(images/6.jpg);background-size: 100% 100%;"
+                                        class="box  image6"></div>
+                                    <div style="background-image: url(images/7.jpg);background-size: 100% 100%;"
+                                        class="box  image7"></div>
+                                    <div style="background-image: url(images/8.jpg);background-size: 100% 100%;"
+                                        class="box  image8"></div>
+                                    <div style="background-image: url(images/9.jpg);background-size: 100% 100%;"
+                                        class="box  image9"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                aria-labelledby="nav-contact-tab">
+                                <input id="file-box" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <p id="logOrPass"></p>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            id="modalsClose">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quod ipsa corrupti architecto eaque
+                autem!</p>
+        </div>
+
+        <!-- Колір -->
+        <div class="modal fade" id="modalColor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Choose text color
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col1">
+                            <div style="background-color: red; color: red" class="box1 num1"></div>
+                            <div style="background-color: blue; color: blue" class="box2 num1"></div>
+                            <div style="background-color: coral; color: coral" class="box3 num1"></div>
+                            <div style="background-color: green; color: green" class="box4 num1"></div>
+                            <div style="background-color: yellow; color: yellow" class="box5 num1"></div>
+                            <div style="background-color: orange; color: orange" class="box6 num1"></div>
+                        </div>
+                        <div class="col2">
+                            <div style="background-color: palevioletred; color: palevioletred" class="box7 num1"></div>
+                            <div style="background-color: skyblue; color: skyblue" class="box8 num1"></div>
+                            <div style="background-color: teal; color: teal" class="box9 num1"></div>
+                            <div style="background-color: chartreuse; color: chartreuse" class="box10 num1"></div>
+                            <div style="background-color: gray; color: gray" class="box11 num1"></div>
+                            <div style="background-color: black; color: black" class="box12 num1"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    <div id="cont2" class="conteiner2">
+        <textarea name="" id="textarea"></textarea>
+        <!-- Таблиця -->
+        <div class="modal fade bd-example-modal-lg" id="modalTable" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content table-box">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Create table
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </div>
+                    <form action="" name="f6">
+                        <div class="row">
+                            <div class="col count">
+                                <span>Count TR:</span>
+                                <input type="text" name="CountTR" class="form-control table-inp" placeholder="Type here...">
+                            </div>
+                            <div class="col count1">
+                                <span>Count TD:</span>
+                                <input type="text" name="CountTD" class="form-control table-inp" placeholder="Type here...">
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col width">
+                                <span> Width of TD:</span>
+                                <input type="text" name="WidthTD" class="form-control table-inp" placeholder="Type here...">
+                            </div>
+                            <div class="col height">
+                                <span> Height of TD:</span>
+                                <input type="text" name="HeightTD" class="form-control table-inp" placeholder="Type here...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col wofborder">
+                                <span>Width of border:</span>
+                                <input type="text" name="WidthBorder" class="form-control border-box  table-inp"
+                                    placeholder="Type here...">
+                            </div>
+                            <div class="form-group col-md-4 boxStyle">
+                                <label for="inputState">Style of border:</label>
+                                <select style="  width: 77%" id="inputState" name="select2" class="form-control inp8">
+                                    <option value="" disabled >Choose style</option>
+                                    <option value="solid" onclick="types()"selected >solid</option>
+                                    <option value="dotted" onclick="types()">dotted</option>
+                                    <option value="double" onclick="types()">double</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 boxCol">
+                                <label for="inputState">Color of border:</label>
+                                <select style="  width: 75%" id="inputState" name="select3" class="form-control inp9">
+                                    <option disabled>Choose color</option>
+                                    <option value="red" onclick="colore()"selected>red</option>
+                                    <option value="green" onclick="colore()">green</option>
+                                    <option value="blue" onclick="colore()">blue</option>
+                                    <option value="black" onclick="colore()">black</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="butClick">
+                            <input style="width: 47%;margin-left: 10px;" class="btn btn-danger resetElem" type="reset"
+                                value="Reset">
+                            <button style="width: 47%" id="tablbut" type="button" name="button" class="btn btn-success ">Create
+
+                                table</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Лішка Ol-->
+
+        <div class="modal fade" id="modalLi-Ol" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create Ol</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="f7">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Count li item</label>
+                                <input type="text" name="listNum" class="form-control inpOl" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Type here...">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Type mark of list</label>
+                                <select class="form-control" name="types" id="exampleFormControlSelect1">
+                                    <option disabled selected>Choose of type mark</option>
+                                    <option value="lower-alpha">a</option>
+                                    <option value="decimal ">1</option>
+                                    <option value="upper-roman">I</option>
+                                    <option value="upper-alpha">A</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <form name="f9">
+                        <div class="modal-footer">
+                            <div class="butClickLi">
+                                <input style="width: 47%;margin-left: 10px;" class="btn btn-danger" name="reset"
+                                    type="reset" value="Reset">
+                                <button style="width: 47%" type="button" name="button" class="btn btn-success ">Create list</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Лішка Ul -->
+
+        <div class="modal fade" id="modalLi-Ul" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create Ul</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" name="f8">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Count li item</label>
+                                <input type="text" name="listUl" class="form-control inpUl" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Type here...">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Type mark of list</label>
+                                <select class="form-control" name="types2" id="exampleFormControlSelect1">
+                                    <option disabled selected>Choose of type mark</option>
+                                    <option value="circle">circle</option>
+                                    <option value="square">square</option>
+                                    <option value="disc">disc</option>
+
+                                </select>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="butClickLi">
+                            <input style="width: 47%;margin-left: 10px;" class="btn btn-danger " type="reset"
+                                value="Reset">
+                            <button style="width: 47%" type="button" name="button2" class="btn btn-success ">Create
+                                list</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <script src="https://kit.fontawesome.com/a79fa03b09.js"></script>
+        <script src="script.js"></script>
+</body>
+
+</html>
